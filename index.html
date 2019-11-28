@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html>
+	<style>
+		
+		p {
+			font-family: sans-serif;
+		}
+		h1 {
+			font-family: monospace;
+		}
+		h2 {
+			font-family: monospace;
+		}
+		.icon {
+			width: 20px;
+			height: 20px;
+			border-color: gray;
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 20%;
+		}
+		.thin_gray_border {
+			border-color: gray;
+			border-width: 2.5px;
+			border-style: solid;
+			border-radius: 5px;
+		}
+		.lightgray_background {
+			background-color:lightgray;
+		}
+		.aqua_background {
+			background-color:aqua;
+		}
+	</style>
+
 	<head>
 		<title>Daniel Park</title>
 	</head>
+
 	<body>
 		<center>
-			<h1>Here you can learn about Daniel</h1>
+			<h1>Daniel's Website</h1>
 			<hr>
-			<img src=”img/daniel_pic.png” alt=”Photo of Daniel”>
-			<h1>Hyeong Kyun Park</h1>
-			<h3>Data science, Purdue '22</h3>
-			<h3>West Lafayette, Indiana</h3>
-			
-			<p>Just a normal 17-year-old who wants to be good at everything! I love CS, soccer, and playing and listening to music!</p>	
 		</center>
+
+		<div class="lightgray_background" style="border-style:solid; border-width:2px">
+			<img src=img/daniel.png alt=”Photo of Daniel” width="83" height="110" class="thin_gray_border">
+			<h1> Hyeong Kyun Park</h1>
+			<h3> Data Science, Purdue '22</h3>
+			<h3> West Lafayette, Indiana</h3>
+			
+			<p style="color:white;">Just a normal 17-year-old who wants to be good at everything! I love CS, soccer, and playing and listening to music!</p>	
+		</div>
 		
-		<h2>My CS Projects</h2>
-		<hr>
-		<form action="https://github.com/fifadaniel?tab=projects">
-			<button type=’submit’>Link to Projects</button>
-		</form>
-		<form action="https://github.com/fifadaniel?tab=projects">
-			<button type=’submit’>Link to Projects</button>
-		</form>
-		<hr>
-		
-		<h2>Links</h2>
-		<form action="https://raw.githubusercontent.com/fifadaniel/fifadaniel.github.io/master/RESUME%20-%20November.pdf" download>
-			<button type=’submit’>Resume Download (11/24/19)</button>
-		</form>
-		<form action="https://github.com/fifadaniel">
-			<button type=’submit’>My GitHub</button>
-		</form>
-		<form action="https://www.linkedin.com/in/fifadaniel/">
-			<button type=’submit’>LinkedIn</button>
-		</form>
-		<form action=”https://www.kaggle.com/fifadaniel”>
-			<button type=’submit’>Kaggle</button>
-		</form>
-		
-		<h2>Email me (danielpark750@gmail.com) for business inquiries or something!</h2>
-			<form action="mailto:danielpark750@gmail.com" method="post" enctype="text/plain" size="50">
-			<textarea rows="4" cols="175" name="comment"></textarea>
-			<br>
-			<input type="submit" value="Send">
-			<input type="reset" value="Reset">
-			</form>
+		<div class="aqua_background" style="border-style:solid; border-width:2px">
+			<center>
+				<h2>My CS Projects</h2>
+				<hr>
+				<form action="https://github.com/fifadaniel?tab=projects" target="_blank">
+					<button type=’submit’>Link to All Projects</button>
+				</form>
+				<form action="https://fifadaniel.github.io" target="_blank">
+					<button type=’submit’>My Website</button>
+				</form>
+			</center>
+			<hr>
+		</div>
+
+		<div style="border-style:solid; border-width:2px">
+		<center>
+			<h2>Links</h2>
+			<a href="https://raw.githubusercontent.com/fifadaniel/fifadaniel.github.io/master/RESUME%20-%20November.pdf" download target="_blank">
+				<img src="img/pdf.png" class="icon">
+			</a>
+
+			<a href="https://github.com/fifadaniel" target="_blank">
+				<img src="img/github.png" class="icon">
+			</a>
+			<a href="https://www.linkedin.com/in/fifadaniel/" target="_blank">
+				<img src="img/linkedin.png" class="icon">
+			</a>
+			<a href=”https://www.kaggle.com/fifadaniel” target="_blank">
+				<img src="img/kaggle.png" class="icon">
+			</a>
+		</center>
+		</div>
+
+		<div style="border-style:solid; border-width:2px;">
+			<center>
+					<h2>Email me (danielpark750@gmail.com)</h2>
+					<form action="mailto:danielpark750@gmail.com" method="post" enctype="text/plain" size="50">
+						<textarea rows="4" cols="130" name="comment" placeholder="Type here..." required></textarea>
+						<br>
+						<input type="submit" value="Send">
+						<input type="reset" value="Reset">
+					</form>
+			</center>
+		</div>
 	</body>
+
 </html>
