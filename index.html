@@ -1,101 +1,346 @@
 <!DOCTYPE html>
+
 <html>
-	<style>
-		
-		p {
-			font-family: sans-serif;
-		}
-		h1 {
-			font-family: monospace;
-		}
-		h2 {
-			font-family: monospace;
-		}
-		.icon {
-			width: 20px;
-			height: 20px;
-			border-color: gray;
-			border-width: 1px;
-			border-style: solid;
-			border-radius: 20%;
-		}
-		.thin_gray_border {
-			border-color: gray;
-			border-width: 2.5px;
-			border-style: solid;
-			border-radius: 5px;
-		}
-		.lightgray_background {
-			background-color:lightgray;
-		}
-		.aqua_background {
-			background-color:aqua;
-		}
-	</style>
 
 	<head>
-		<title>Daniel Park</title>
+
+		<style>
+
+		* {
+		  box-sizing: border-box;
+		}
+
+		h2 {
+			color: #808080;
+		}
+
+		header {
+			left: 0;
+			top: 0;
+			width: 100%;
+			color: #808080;
+			text-align: center;
+			background: linear-gradient(to bottom, #add7ed, white);
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		body {
+		  transition: background-color 5s ease-in, 3s opacity;
+		  background-color: darkgray;
+		  margin: 0;
+		  opacity:0;
+		}
+
+		footer {
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			background-color: #808080;
+			color: white;
+			text-align: center;
+		}
+
+		.navbar {
+		  overflow: hidden;
+		  background-color: #808080;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.navbar a {
+		  float: left;
+		  font-size: 16px;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 36.2px;
+		  text-decoration: none;
+		  border-color: darkgray;
+		  border-width: 1px;
+		  border-style: solid;
+		}
+
+		.dropdown {
+			float: left;
+		  overflow: hidden;
+		  border-color: darkgray;
+		  border-width: 1px;
+		  border-style: solid;
+		}
+
+		.dropdown .dropbtn {
+		  font-size: 16px;  
+		  border: none;
+		  outline: none;
+		  color: white;
+		  padding: 14px 34px;
+		  background-color: inherit;
+		  font: inherit;
+		  margin: 0;
+		}
+
+		.navbar a:hover, .dropdown:hover .dropbtn {
+		  background-color: #add7ed;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  width: 100%;
+		  left: 0;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content .header {
+		  background: #add7ed;
+		  padding: 16px;
+		  color: white;
+		}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		  background-color: #add7ed;
+		}
+
+		.column {
+		  float: left;
+		  width: 33.33%;
+		  padding: 10px;
+		  background-color: inherit;
+		}
+
+		.column a {
+		  float: none;
+		  color: black;
+		  padding: 16px;
+		  text-decoration: none;
+		  display: block;
+		  text-align: left;
+		}
+
+		.column a:hover {
+		  background-color: #ddd;
+		}
+
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		.fullCard {
+			width:90%;
+			border:1px solid #ccc;
+			border-radius: 5px;
+			margin: 10px 5px;
+			padding: 4px;
+			word-wrap: break-word;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+		}
+		.cardContent {
+			padding: 10px;
+		}
+
+		</style>
+
+		<script>
+
+	    	window.onload = function() {
+	        	document.body.style.backgroundColor = 'white'
+	        	document.querySelector("body").style.opacity = 1;
+	    	}
+
+		</script>
+
 	</head>
 
+	<title>Daniel Park</title>
+
 	<body>
+
+		<header>
+			<h1>big hopes and dreams</h1>
+		</header>
+
+		<div class="navbar">
+
+		  <a href="#home">home</a>
+
+		  <div class="dropdown">
+		    <button class="dropbtn">email me 
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content">
+		        <div style="border-style:solid; border-width:2px;">
+				<center>
+						<h2>get in touch with me</h2>
+						<form action="mailto:danielpark750@gmail.com" method="post" enctype="text/plain" size="50">
+							<textarea rows="4" cols="130" name="comment" placeholder="Type here..." required></textarea>
+							<br>
+							<input type="submit" value="Send">
+							<input type="reset" value="Reset">
+						</form>
+				</center>
+			</div>
+		    </div>
+		  </div> 
+
+		  <div class="dropdown">
+		    <button class="dropbtn">about 
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content">
+		    	<img src=img/selfie.jpg alt=”Photo of Daniel” width="150" height="150" style="border-color: white;
+				border-width: 3px;
+				border-style: solid;
+				border-radius: 75px; 
+				position:absolute;
+				right:15%;
+				top:20%">
+		      <div class="header">
+		        <h2>college student @ purdue university</h2>
+		        <ul>
+		        	<li>currently looking for a summer internship</li>
+		        	<li>west lafayette, indiana</li>
+		        	<li>b.s. data science & computer science, math minor</li>
+		        	<li>expected graduation: may 2022</li>
+		        </ul>
+
+		        <h2>life goals</h2>
+		        	<ol>
+		        		<li>to develop real, intimate relationships</li>
+		        		<li>have fun as much as i can</li>
+		        		<li>do the best i can for my close ones</li>
+		        	</ol>
+
+		        <h2>music</h2>
+		        <ul>
+		        	<li>
+		        		instruments
+		        		<ul>
+		        			<li>cello</li>
+		        			<li>bass guitar</li>
+		        			<li>acoustic guitar</li>
+		        		</ul>
+		        	</li>
+		        	<li>i want to sing, dance, and make music</li>	
+		        </ul>
+
+		        <h2>football</h2>
+		        <ul>
+		        	<li>tottenham hotspur fan</li>
+		        	<li>i also play</li>
+		        </ul>
+		      </div>     
+		    </div>
+		  </div> 
+
+		  <div class="dropdown">
+		    <button class="dropbtn">links & downloads 
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content">
+		      <div class="header">
+		        <h2>plug</h2>
+		      </div>   
+		      <div class="row">
+		        <div class="column">
+		          <h3>for fun</h3>
+		          <a href="https://www.instagram.com/fifa_daniel/" target="_blank">instagram</a>
+		          <a href="https://www.youtube.com/channel/UCrh3ShjpBsNvlcpMkz1T_zw?view_as=subscriber">youtube</a>
+		          <a href="https://soundcloud.com/fifa_daniel">soundcloud</a>
+		          <a href="#">tiktok (fifa_daniel)</a>
+		        </div>
+		        <div class="column">
+		          <h3>professional</h3>
+		          <a href="https://github.com/fifadaniel?tab=projects" target="_blank">github</a>
+		          <a href=”https://www.kaggle.com/fifadaniel” target="_blank">kaggle</a>
+		          <a href="https://www.linkedin.com/in/fifadaniel/" target="_blank">linkedin</a>
+		        </div>
+		        <div class="column">
+		          <h3>downloads</h3>
+		          <a href="https://raw.githubusercontent.com/fifadaniel/fifadaniel.github.io/master/RESUME%20-%20November.pdf" download target="_blank">my resume</a>
+		          <a href="#">null</a>
+		          <a href="#">null</a>
+		        </div>
+		      </div>
+		    </div>
+		  </div> 
+
+		  <div class="dropdown">
+		    <button class="dropbtn">cs projects 
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content">
+		      <div class="header">
+		        <h2>work in progress</h2>
+		      </div>   
+		        <div class="column">
+		          <h3>complete</h3>
+		          <a href="#">null</a>
+		          <a href="#">null</a>
+		          <a href="#">null</a>
+		        </div>
+		        <div class="column">
+		          <h3>in progress</h3>
+		          <a href="https://fifadaniel.github.io" target="_blank">My Website (CSS/HTML/JS)</a>
+		          <a href="#">null</a>
+		          <a href="#">null</a>
+		        </div>
+		        <div class="column">
+		          <h3>discontinued</h3>
+		          <a href="https://devpost.com/software/boilerpace#updates" target="_blank">BoilerPace (Python)</a>
+		          <a href="#">null</a>
+		          <a href="#">null</a>
+		        </div>
+		    </div>
+		  </div> 
+
+		  <div class="dropdown">
+		    <button class="dropbtn">my resume 
+		      <i class="fa fa-caret-down"></i>
+		    </button>
+		    <div class="dropdown-content" style="height:80%">
+		      <iframe src="pdf/resume.pdf" height="100%" width="100%"></iframe>
+		    </div>
+		  </div> 
+
+		</div>
+
 		<center>
-			<h1>Daniel's Website</h1>
-			<hr>
+		<div style="padding:16px">
+			<div class="fullCard" style="display: inline-block;">
+					<div class="cardContent">
+							<center><h4>daniel</h4></center>
+							<p style="opacity:0.7;">hyeong kyun park</p>
+					</div>
+				</div>
+		</div>
+
+		<div style="padding:16px">
+			<div class="fullCard" style="display: inline-block;">
+					<div class="cardContent">
+							<center><h4>01/06/2002</h4></center>
+							<p style="opacity:0.7;">17-year-old</p>
+					</div>
+				</div>
+		</div>
+
+		<div style="padding:16px">
+			<div class="fullCard" style="display: inline-block;">
+					<div class="cardContent">
+							<center><h4>seoul, south korea</h4></center>
+							<p style="opacity:0.7;">currently west lafayette, indiana</p>
+					</div>
+				</div>
+		</div>
 		</center>
 
-		<div class="lightgray_background" style="border-style:solid; border-width:2px">
-			<img src=img/daniel.png alt=”Photo of Daniel” width="83" height="110" class="thin_gray_border">
-			<h1> Hyeong Kyun Park</h1>
-			<h3> Data Science, Purdue '22</h3>
-			<h3> West Lafayette, Indiana</h3>
-			
-			<p style="color:white;">Just a normal 17-year-old who wants to be good at everything! I love CS, soccer, and playing and listening to music!</p>	
-		</div>
-		
-		<div class="aqua_background" style="border-style:solid; border-width:2px">
-			<center>
-				<h2>My CS Projects</h2>
-				<hr>
-				<form action="https://github.com/fifadaniel?tab=projects" target="_blank">
-					<button type=’submit’>Link to All Projects</button>
-				</form>
-				<form action="https://fifadaniel.github.io" target="_blank">
-					<button type=’submit’>My Website</button>
-				</form>
-			</center>
-			<hr>
-		</div>
-
-		<div style="border-style:solid; border-width:2px">
-		<center>
-			<h2>Links</h2>
-			<a href="https://raw.githubusercontent.com/fifadaniel/fifadaniel.github.io/master/RESUME%20-%20November.pdf" download target="_blank">
-				<img src="img/pdf.png" class="icon">
-			</a>
-
-			<a href="https://github.com/fifadaniel" target="_blank">
-				<img src="img/github.png" class="icon">
-			</a>
-			<a href="https://www.linkedin.com/in/fifadaniel/" target="_blank">
-				<img src="img/linkedin.png" class="icon">
-			</a>
-			<a href=”https://www.kaggle.com/fifadaniel” target="_blank">
-				<img src="img/kaggle.png" class="icon">
-			</a>
-		</center>
-		</div>
-
-		<div style="border-style:solid; border-width:2px;">
-			<center>
-					<h2>Email me (danielpark750@gmail.com)</h2>
-					<form action="mailto:danielpark750@gmail.com" method="post" enctype="text/plain" size="50">
-						<textarea rows="4" cols="130" name="comment" placeholder="Type here..." required></textarea>
-						<br>
-						<input type="submit" value="Send">
-						<input type="reset" value="Reset">
-					</form>
-			</center>
-		</div>
+		<footer>
+			website made by daniel park using: <strong>html</strong>, <strong>css</strong>, and <strong>javascript</strong>
+		</footer>
 	</body>
-
 </html>
