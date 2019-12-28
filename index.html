@@ -6,6 +6,7 @@
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154649827-1"></script>
 		<script>
+			// GA
 	  		window.dataLayer = window.dataLayer || [];
 	  		function gtag(){dataLayer.push(arguments);}
 	  		gtag('js', new Date());
@@ -13,345 +14,474 @@
 	  		gtag('config', 'UA-154649827-1');
 		</script>
 
-
 		<style>
 
-		* {
-		  box-sizing: border-box;
-		}
+			#topBackground {
+				background: url(img/ananticove.jpeg);
+				background-repeat: no-repeat;
+  				background-size: cover;
+  				width: 100%;
+  				min-height: 75vh;
+			}
+			/* sticky header https://stackoverflow.com/questions/19158559/how-to-fix-a-header-on-scroll/19158690 */
 
-		h2 {
-			color: #808080;
-		}
+			body {
+				overflow-y: auto;
+				margin: 0;
+			}
+			header {
+				position: sticky; /* Allocates space for the element, but moves it with you when you scroll */
+				top: 0; /* specifies the start position for the sticky behavior - 0 is pretty common */
+				width: auto;
+				padding: 5px 0 5px 15px;
+				color: white;
+				background-color: #337AB7;
+				margin: 0px;
+				font-family:arial;
+			}
 
-		header {
-			left: 0;
-			top: 0;
-			width: 100%;
-			color: #808080;
-			text-align: center;
-			background: linear-gradient(to bottom, #add7ed, white);
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
+			h1 {
+				margin: 0;
+				padding: 10px;
+			}
 
-		body {
-		  transition: background-color 5s ease-in, 3s opacity;
-		  background-color: darkgray;
-		  margin: 0;
-		  opacity:0;
-		}
+			div.navigator {
+				border: 1px hidden;
+				
+			}
 
-		footer {
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			background-color: #808080;
-			color: white;
-			text-align: center;
-		}
+			img.profile {
+				display: block;
+				width: 30%;
+				height: 30%;
+				border-width: 0.1px;
+				border-style: solid;
+				border-radius: 200px;
+				float: center;
+			}
 
-		.navbar {
-		  overflow: hidden;
-		  background-color: #808080;
-		  font-family: Arial, Helvetica, sans-serif;
-		}
+			.icon {
+				width: 20px;
+				height: 20px;
+				border-color: gray;
+				border-width: 1px;
+				border-style: solid;
+				border-radius: 20%;
+				margin: 5px;
+				background-color: white;
+			}
 
-		.navbar a {
-		  float: left;
-		  font-size: 16px;
-		  color: white;
-		  text-align: center;
-		  padding: 14px 36.2px;
-		  text-decoration: none;
-		  border-color: darkgray;
-		  border-width: 1px;
-		  border-style: solid;
-		}
+			.icon:hover {
+				transform: scale(1.2);
+			}
 
-		.dropdown {
-			float: left;
-		  overflow: hidden;
-		  border-color: darkgray;
-		  border-width: 1px;
-		  border-style: solid;
-		}
+			.skillicon {
+				width: 80px;
+				height: 80px;
+				border-color: gray;
+				border-width: 1px;
+				border-style: solid;
+				border-radius: 30%;
+				margin: 5px;
+				background-color: white;
+			}
 
-		.dropdown .dropbtn {
-		  font-size: 16px;  
-		  border: none;
-		  outline: none;
-		  color: white;
-		  padding: 14px 34px;
-		  background-color: inherit;
-		  font: inherit;
-		  margin: 0;
-		}
+			.skillicon:hover {
+				transform: scale(1.05);
+			}
 
-		.navbar a:hover, .dropdown:hover .dropbtn {
-		  background-color: #add7ed;
-		}
+			.left {
+				float: left;
+				width: 50%;
+			}
 
-		.dropdown-content {
-		  display: none;
-		  position: absolute;
-		  background-color: #f9f9f9;
-		  width: 100%;
-		  left: 0;
-		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		  z-index: 1;
-		}
+			.right {
+				float: right;
+				width: 50%;
+			}
 
-		.dropdown-content .header {
-		  background: #add7ed;
-		  padding: 16px;
-		  color: white;
-		}
+			.fullCard {
+				width:200px;
+				height:220px;
+				border:1px solid #ccc;
+				border-radius: 5px;
+				margin: 10px 5px;
+				padding: 4px;
+				word-wrap: break-word;
+			}
 
-		.dropdown:hover .dropdown-content {
-		  display: block;
-		  background-color: #add7ed;
-		}
+			.projectCard {
+				width:200px;
+				height:200px;
+				border:1px solid #ccc;
+				border-radius: 20px;
+				margin: 10px 5px;
+				padding: 4px;
+				word-wrap: break-word;
+				box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+			}
 
-		.column {
-		  float: left;
-		  width: 33.33%;
-		  padding: 10px;
-		  background-color: inherit;
-		}
+			.cardContent {
+				padding: 10px;
+			}
 
-		.column a {
-		  float: none;
-		  color: black;
-		  padding: 16px;
-		  text-decoration: none;
-		  display: block;
-		  text-align: left;
-		}
+			p {
+				color: gray;
+			}
 
-		.column a:hover {
-		  background-color: #ddd;
-		}
-
-		.row:after {
-		  content: "";
-		  display: table;
-		  clear: both;
-		}
-
-		.fullCard {
-			width:90%;
-			border:1px solid #ccc;
-			border-radius: 5px;
-			margin: 10px 5px;
-			padding: 4px;
-			word-wrap: break-word;
-			box-shadow: 0 10px 20px rgba(0,0,0,0.19);
-		}
-		.cardContent {
-			padding: 10px;
-		}
-
-		</style>
-
-		<script>
-
-
-	    	window.onload = function() {
-	        	document.body.style.backgroundColor = 'white'
-	        	document.querySelector("body").style.opacity = 1;
-	    	}
-
-		</script>
-
+    	</style>
 	</head>
-
-	<title>Daniel Park</title>
 
 	<body>
 
+		<div id="topBackground">
+			<center>
+				<br><br><br><br>
+
+				<div class="left">
+					<h3 style="color:white; font-family:arial; margin-left:40px; margin-right:40px">
+					I am an undergraduate student at Purdue University studying Data Science hoping to double major in Computer Science and minor in Math.
+					</h3>
+
+					<br>
+
+					<div class="fullCard">
+						<div style="font-family:arial;">
+							<a style= "color:lightgray; text-decoration:none;" href=#experience><h4>EXPERIENCE</h4></a>
+							<a style= "color:lightgray; text-decoration:none;" href=#education><h4>EDUCATION</h4></a>
+							<a style= "color:lightgray; text-decoration:none;" href=#skills><h4>SKILLS</h4></a>
+							<a style= "color:lightgray; text-decoration:none;" href=#hobbies><h4>HOBBIES</h4></a>
+							<a style= "color:lightgray; text-decoration:none;" href=#resume><h4>RESUME</h4></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="right">
+
+					<br><br><br>
+					<img src="img/daniel2.jpg" alt="Daniel's Pic" class="profile">
+					<br>
+
+					<a href="https://github.com/fifadaniel" target="_blank">
+						<img src="img/github.png" class="icon">
+					</a>
+					<a href="https://www.linkedin.com/in/fifadaniel/" target="_blank">
+						<img src="img/linkedin.png" class="icon">
+					</a>
+					<a href=”https://www.kaggle.com/fifadaniel” target="_blank">
+						<img src="img/kaggle.png" class="icon">
+					</a>
+					<a href=”https://www.instagram.com/h1_yung” target="_blank">
+						<img src="img/instagram.png" class="icon">
+					</a>
+					<a href=”https://soundcloud.com/h1_yung” target="_blank">
+						<img src="img/soundcloud.png" class="icon">
+					</a>
+					<a href=”https://www.youtube.com/channel/UCHIwIgAGk47He8zBScXGkSw/?guided_help_flow=5” target="_blank">
+						<img src="img/youtube.png" class="icon">
+					</a>
+				</div>
+			</center>
+		</div>
+
+
+
 		<header>
-			<h1>dream big!</h1>
+			<h1>Hyeong Kyun Park</h1>
 		</header>
 
-		<div class="navbar">
+		<main style="height:3000px;">
+			<div style="margin-left:10px; font-family:arial;">
 
-		  <a href="#home">home</a>
+			<!-- LEFT PART OF BODY !-->
+			<div class="left" style="width:50%; height:800px;">
+				<h1 id="experience" style="padding:20px 20px;">EXPERIENCE</h1>
+					<div style="margin-left:40px; margin-right:40px;">
+						<h2 style="margin-bottom:0px;">Social Media Specialist Intern</h2>
+						<h4 style="color:gray; margin-top:5px; margin-bottom:0px;">August 2018 - January 2019</h4>
+						<h4 style="margin-top:10px; margin-bottom:0px; color:darkgray;">Wabash Valley Youth Symphony</h4>
+						<ul style="color:darkgray;">
+							<li>Managed and regularly updated various social media platforms.</li>
+							<li>Assisted marketing and advertising by designing flyers and posters and providing
+							analytical insight to the board of directors of Wabash Valley Youth Symphony.</li>
+							<li>Played as the principal cellist.</li>
+						</ul>
+					</div>
 
-		  <div class="dropdown">
-		    <button class="dropbtn">email me 
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content">
-		        <div style="border-style:solid; border-width:2px;">
-				<center>
-						<h2>get in touch with me</h2>
-						<form action="mailto:h1yungpark@gmail.com" method="post" enctype="text/plain" size="50">
-							<textarea rows="4" cols="130" name="comment" placeholder="Type here..." required></textarea>
-							<br>
-							<input type="submit" value="Send">
-							<input type="reset" value="Reset">
-						</form>
-				</center>
+					<div style="margin-left:40px; margin-right:40px;">
+						<h2 style="margin-bottom:0px;">President</h2>
+						<h4 style="color:gray; margin-top:5px; margin-bottom:0px;">May 2018 - May 2019</h4>
+						<h4 style="margin-top:10px; margin-bottom:0px; color:darkgray;">West Lafayette UNICEF</h4>
+						<ul style="color:darkgray;">
+							<li>Managed the club budget and analyzed data in order to make efficient decisions and transactions.</li>
+							<li>Communicated frequently with the school faculty, our sponsors, and local leaders to organize and pioneer various new events such as schoolwide trafficking awareness week.</li>
+							<li>Increased member retention by 100% and funds raised by 150%.</li>
+						</ul>
+					</div>
+
+					<div style="margin-left:40px; margin-right:40px;">
+						<h2 style="margin-bottom:0px;">Vice President</h2>
+						<h4 style="color:gray; margin-top:5px; margin-bottom:0px;">May 2018 - May 2019</h4>
+						<h4 style="margin-top:10px; margin-bottom:0px; color:darkgray;">West Lafayette Model UN</h4>
+						<ul style="color:darkgray;">
+							<li>Organized weekly meetings and trained students diplomatic and persuasion skills in
+							preparation for trips to biannual conferences.</li>
+							<li>Increased member retention by 200%.</li>
+						</ul>
+					</div>
+
+				<hr>
+
+
+
+				<h1 id="education" style="padding:20px 20px;">EDUCATION</h1>
+					<div style="margin-left:40px; margin-right:40px;">
+						<h2 style="margin-bottom:0px;">Purdue University</h2>
+						<h4 style="color:gray; margin-top:5px; margin-bottom:0px;">August 2019 - May 2022</h4>
+						<h4 style="margin-top:10px; margin-bottom:0px; color:darkgray;">Bachelor of Science Data Science, Computer Science; Math Minor</h4>
+						<h5 style="margin-top:10px;">GPA: 3.45</h5>
+						<ul style="color:darkgray;">
+							<h5 style="color:gray;">Relevant Coursework</h5>
+							<li>Problem Solving and Object Oriented Programming (CS18000)</li>
+							<li>Tools (CS19300)</li>
+							<li>Several Variable Calculus Honors (MA27101)</li>
+							<li>Linear Algebra (MA26500)</li>
+							<li>Probability (STAT41600)</li>
+							<li>Statistics for Data Science (STAT35500)</li>
+
+							<h5 style="color:gray;">Spring 2020</h5>
+							<li>Python (CS38003)</li>
+							<li>Statistical Theory (STAT41700)</li>
+							<li>Foundations of Computer Science (CS18200)</li>
+							<li>Real Analysis (MA34100)</li>
+						</ul>
+					</div>
+				<hr>
+
+
+
+				<h1 id="skills" style="padding:20px 20px;">SKILLS</h1>
+					<div style="margin-left:40px; margin-right:40px;">
+						<img src="img/java.png" alt="Java" class="skillicon" title="Java & IntelliJ">
+						<img src="img/python.png" alt="Python" class="skillicon" title="Python & PyCharm">
+						<img src="img/r.png" alt="R" class="skillicon" title="R & RStudio">
+						<img src="img/swift.png" alt="Swift" class="skillicon" title="Swift & XCode">
+						<img src="img/sql.png" alt="SQL" class="skillicon" title="MySQL">
+						<img src="img/git.png" alt="Git" class="skillicon" title="Git">
+						<img src="img/html.png" alt="HTML" class="skillicon" title="HTML5">
+						<img src="img/css.png" alt="CSS" class="skillicon" title="CSS3">
+						<img src="img/bash.png" alt="Bash" class="skillicon" title="Bash">
+					</div>
+				<hr>
+				<h1 id="hobbies" style="padding:20px 20px;">HOBBIES</h1>
+					<div style="margin-left:40px; margin-right:40px;">
+						<h4>Soccer</h4>
+						<p>I have been playing soccer ever since I was 5, playing high school varsity and for my local club team. In college, I am playing with Purdue Korean Futbol Club (PKFC). I also love watching the game, and I support Tottenham Hotspurs. <strong>COYS!</strong></p>
+
+						<h4>Music</h4>
+						<p>I don't have a <em>favorite</em> genre- I like hip-hop, r&b, rock, indie, classic, k-pop...</p>
+						<p>I can play multiple instruments, but of them all I play the cello the best because I have played it since 2010, participating in multiple orchestras, the most noteable ones being the Indiana All State Orchestra, Wabash Valley Youth Symphony, and the Purdue Philharmonic.</p>
+						<p>I can also play the bass and acoustic guitar, and I am also currently learning how to play the piano, sing, and produce my own beats.</p>
+
+						<h4>Computer Science</h4>
+						<p>I love building apps, websites, games... you name it!</p>
+					</div>
+				<hr>
+
+				<h1 id="resume">RESUME</h1>
+
+					<iframe src="pdf/resume.pdf" height="100%" width="100%" style="width:98%;"></iframe>
 			</div>
-		    </div>
-		  </div> 
 
-		  <div class="dropdown">
-		    <button class="dropbtn">about 
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content">
-		    	<img src=img/selfie.jpg alt=”Photo of Daniel” width="150" height="150" style="border-color: white;
-				border-width: 3px;
-				border-style: solid;
-				border-radius: 75px; 
-				position:absolute;
-				right:15%;
-				top:20%">
-		      <div class="header">
-		        <h2>college student @ purdue university</h2>
-		        <ul>
-		        	<li>currently looking for a summer or part-time internship</li>
-		        	<li>west lafayette, indiana</li>
-		        	<li>b.s. data science, computer science; math minor</li>
-		        	<li>expected graduation: may 2022</li>
-		        </ul>
+			<!-- RIGHT PART OF BODY. !-->
+			<div class="right" style="background-color:lightgray; color:#337AB7; height:3000px;">
 
-		        <h2>life goals</h2>
-		        	<ol>
-		        		<li>to develop real, intimate relationships</li>
-		        		<li>have fun as much as i can</li>
-		        		<li>do the best i can for my close ones</li>
-		        	</ol>
+				<center>
+					<h1 style="margin-top:10px;">Projects</h1>
+					<hr>
+						<!-- LEFT SIDE OF PROJECTS !-->
+						<div style="float:left; width:50%; position:center;">
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>StikyNotez</h4></center>
+									<p style="font-size:12px;">My second Swift 5 iOS App. Conveniently create notecards and sticky notes and manage your notes and reminders all in one view! Comes with a really nice user interface.</p>
+									<form action="https://github.com/fifadaniel/StikyNotez" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		        <h2>music</h2>
-		        <ul>
-		        	<li>
-		        		instruments
-		        		<ul>
-		        			<li>cello</li>
-		        			<li>bass guitar</li>
-		        			<li>acoustic guitar</li>
-		        		</ul>
-		        	</li>
-		        	<li>i want to sing, dance, and make music</li>	
-		        </ul>
+							<br>
 
-		        <h2>football</h2>
-		        <ul>
-		        	<li>tottenham hotspur fan</li>
-		        	<li>i also play!</li>
-		        </ul>
-		      </div>     
-		    </div>
-		  </div> 
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>GoalsDaily</h4></center>
+									<p style="font-size:12px;">My first Swift 5 iOS App. Personal trainer in the palm of your hands managing daily fitness goals that it creates for you (or by yourself) & motivating you with quotes.</p>
+									<form action="https://github.com/fifadaniel/GoalsDaily" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		  <div class="dropdown">
-		    <button class="dropbtn">links & downloads 
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content">
-		      <div class="header">
-		        <h2>plug</h2>
-		      </div>   
-		      <div class="row">
-		        <div class="column">
-		          <h3>for fun</h3>
-		          <a href="https://www.instagram.com/h1_yung/" target="_blank">instagram</a>
-		          <a href="https://www.youtube.com/channel/UCHIwIgAGk47He8zBScXGkSw/?guided_help_flow=5">youtube</a>
-		          <a href="https://soundcloud.com/h1_yung">soundcloud</a>
-		          <a href="#">tiktok (@h1_yung)</a>
-		        </div>
-		        <div class="column">
-		          <h3>professional</h3>
-		          <a href="https://github.com/fifadaniel?tab=projects" target="_blank">github</a>
-		          <a href=”https://www.kaggle.com/fifadaniel” target="_blank">kaggle</a>
-		          <a href="https://www.linkedin.com/in/fifadaniel/" target="_blank">linkedin</a>
-		        </div>
-		        <div class="column">
-		          <h3>downloads</h3>
-		          <a href="https://raw.githubusercontent.com/fifadaniel/fifadaniel.github.io/master/RESUME%20-%20November.pdf" download target="_blank">my resume</a>
-		          <a href="#">null</a>
-		          <a href="#">null</a>
-		        </div>
-		      </div>
-		    </div>
-		  </div> 
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>Personal Website</h4></center>
+									<p style="font-size:12px;">Personal GitHub website!</p>
+									<form action="https://fifadaniel.github.io/" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		  <div class="dropdown">
-		    <button class="dropbtn">projects 
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content">
-		      <div class="header">
-		        <h2>links to my computer and data science projects</h2>
-		      </div>   
-		        <div class="column">
-		          <h3>.</h3>
-		          <a href="https://github.com/fifadaniel/DataScienceProjects" target="_blank">data science</a>
-		          <a href="https://fifadaniel.github.io" target="_blank">my website</a>
-		          <a href="#">null</a>
-		        </div>
-		        <div class="column">
-		          <h3>.</h3>
-		          <a href="#">null</a>
-		          <a href="#">null</a>
-		          <a href="#">null</a>
-		        </div>
-		        <div class="column">
-		          <h3>.</h3>
-		          <a href="https://devpost.com/software/boilerpace#updates" target="_blank">BoilerPace (Python)</a>
-		          <a href="https://github.com/fifadaniel/GoalsDaily">GoalsDaily</a>
-		          <a href="#">null</a>
-		        </div>
-		    </div>
-		  </div> 
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>BoilerPace</h4></center>
+									<p style="font-size:12px;">Attempted to create a university planner with walking times to classes in 24 hours. App development through Python's Kivy Library + GeoIP, JSON</p>
+									<form action="https://github.com/fifadaniel/BoilerPace" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		  <div class="dropdown">
-		    <button class="dropbtn">my resume 
-		      <i class="fa fa-caret-down"></i>
-		    </button>
-		    <div class="dropdown-content" style="height:80%">
-		      <iframe src="pdf/resume.pdf" height="100%" width="100%"></iframe>
-		    </div>
-		  </div> 
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		</div>
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		<center>
-		<div style="padding:16px">
-			<div class="fullCard" style="display: inline-block;">
-					<div class="cardContent">
-							<center><h4>daniel</h4></center>
-							<p style="opacity:0.7;">hyeong kyun park</p>
-					</div>
-				</div>
-		</div>
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		<div style="padding:16px">
-			<div class="fullCard" style="display: inline-block;">
-					<div class="cardContent">
-							<center><h4>01/06/2002</h4></center>
-							<p style="opacity:0.7;">17-year-old</p>
-					</div>
-				</div>
-		</div>
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
-		<div style="padding:16px">
-			<div class="fullCard" style="display: inline-block;">
-					<div class="cardContent">
-							<center><h4>seoul, south korea</h4></center>
-							<p style="opacity:0.7;">currently west lafayette, indiana</p>
-					</div>
-				</div>
-		</div>
-		</center>
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
 
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
+
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
+
+							<br>
+							
+							<div class="projectCard" style="display: inline-block;">
+								<div class="cardContent">
+									<center><h4>TBA</h4></center>
+									<p style="font-size:12px;">Coming Soon</p>
+									<form action="" target="_blank">
+										<button type='submit'>Link</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<!-- RIGHT SIDE OF PROJECTS !-->
+						<div style="float:right; width:50%; position:center;">
+							<img src="img/stikynotez.png" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="img/goalsdaily.png" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="img/github.png" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="img/purdue.png" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+
+							<img src="" class="projectCard" style="object-fit:cover; display:inline-block; margin: 8.9px;">
+						</div>
+				</center>
+
+			</div>
+			</div>
+		</main>
+
+		<hr>
 		<footer>
-			website made by daniel park using: <strong>html</strong>, <strong>css</strong>, and <strong>javascript</strong>
+			<center>
+			<p>Made from scratch using HTML5 and CSS3</p>
+			<a href="#topBackground" style="color:#337AB7; text-decoration:none;"><h4>BACK TO TOP</h4></a>
+			</center>
 		</footer>
 	</body>
 </html>
